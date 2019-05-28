@@ -1,0 +1,37 @@
+{
+  "builders": [
+      {
+        "ami_name": "custom-gitlab-{{timestamp}}",
+        "instance_type": "t2.medium",
+        "source_ami_filter": {
+          "filters": {
+            "virtualization-type": "hvm",
+            "name": "amzn2-ami-hvm-2.0.20190508-x86_64-gp2",
+            "root-device-type": "ebs"
+          },
+          "owners": ["137112412989"],
+          "most_recent": true
+        },
+        "communicator": "ssh",
+        "ssh_username": "ec2-user",
+        "ssh_disable_agent_forwarding": "false",
+        "type": "amazon-ebs"
+      }
+  ], "provisioners":
+  [
+    {
+      "type": "file",
+      "source": "config/Makefile",
+      "destination": "/home/ec2-user/Makefile"
+    },
+    {
+      "type": "file",
+      "source": "config/docker-compose.yml",
+      "destination": "/home/ec2-user/docker-compose.yml"
+    },
+    {
+      "type": "shell",
+      "script": "config/gitlab-setup.sh"
+    }
+  ]
+}
