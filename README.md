@@ -32,10 +32,17 @@ Creates an image containing Gitlab and a Gitlab runner.
 	```
 
 2. Browse to the Gitlab server and create password.
+
+	Note: Gitlab can take a few minutes to spin up. Keep refreshing your browser until the "Change password" page is displayed.
+
 3. Log in with the username `root` and the password you just set.
+
 4. Click "Settings" (the spanner icon), then click "Runners".
+
 5. Find the registration token on this page, then enter the command below:
 
 	```
 	make REGISTRATION_TOKEN=<token> register-gitlab-runner
 	```
+
+6. Refresh the page to ensure your runner has successfully registered.
