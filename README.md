@@ -46,3 +46,31 @@ Creates an image containing Gitlab and a Gitlab runner.
 	```
 
 6. Refresh the page to ensure your runner has successfully registered.
+
+# Running "example" code
+## CI/CD Pipeline
+
+To run the CI/CD pipeline, do the following:
+
+1. Log into GitLab and create a new repository.
+
+2. Run the "Push an existing folder" commands.
+
+## Build and run the image
+
+If you want to see what the example container does, do the following:
+
+1. Build the image:
+
+	```
+	cd example
+	docker build -t example-nginx .
+	```
+
+2. Run the image:
+
+	```
+	docker run --rm -it -p 8080:80 --name example-nginx example-nginx
+	```
+
+3. Browse to `http://<public_ip>:8080`

@@ -1,4 +1,4 @@
 .PHONY: build
 build:
-	@packer validate config/gitlab.json
-	@packer build config/gitlab.json
+	@packer validate config/gitlab.json; \
+	packer build config/gitlab.json

@@ -32,6 +32,15 @@
     {
       "type": "shell",
       "script": "config/gitlab-setup.sh"
+    },
+    {
+      "type": "shell",
+      "inline": ["mkdir /home/ec2-user/example"]
+    },
+    {
+      "type": "file",
+      "source": "config/example/",
+      "destination": "/home/ec2-user/example"
     }
   ]
 }

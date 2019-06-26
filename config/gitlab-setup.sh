@@ -1,6 +1,7 @@
 #!/bin/bash -e
 sudo yum update -y
 sudo yum upgrade -y
+sudo yum install git -y
 sudo amazon-linux-extras install -y docker
 sudo systemctl enable docker
 sudo systemctl restart docker

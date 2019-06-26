@@ -3,16 +3,16 @@ version: "3.3"
 services:
   gitlab:
     container_name: gitlab
+    hostname: gitlab
     image: gitlab/gitlab-ce:latest
     restart: always
-     # environment:
-       # GITLAB_OMNIBUS_CONFIG: |
-         # external_url 'http://gitlab.example.com'
-         # Add any other gitlab.rb configuration here, each on its own line
-    volumes:
-      - "/srv/gitlab/config:/etc/gitlab"
-      - "/srv/gitlab/logs:/var/log/gitlab"
-      - "/srv/gitlab/data:/var/opt/gitlab"
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://<host_ip>'
+#    volumes:
+#      - "/srv/gitlab/config:/etc/gitlab"
+#      - "/srv/gitlab/logs:/var/log/gitlab"
+#      - "/srv/gitlab/data:/var/opt/gitlab"
     ports:
       - 0.0.0.0:80:80
       - 0.0.0.0:443:443
@@ -20,6 +20,7 @@ services:
 
   gitlab-runner:
     container_name: gitlab-runner
+    hostname: gitlab-runner
     image: gitlab/gitlab-runner:alpine
     restart: always
     volumes:
