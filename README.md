@@ -80,3 +80,11 @@ If you want to see what the example container does, do the following:
 	```
 
 3. Browse to `http://<public_ip>:8080`
+
+# Recommended Repo Settings
+
+1. Create a repository
+
+2. Settings -> General -> Merge Requests - Enable `Pipelines must succeed`
+
+3. Settings -> CI/CD -> Variables - Add variables and secrets which are consumed by your pipeline
