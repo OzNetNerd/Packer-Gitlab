@@ -52,9 +52,15 @@ Creates an image containing Gitlab and a Gitlab runner.
 
 To run the CI/CD pipeline, do the following:
 
-1. Log into GitLab and create a new repository.
+1. Change to the `example` directory:
 
-2. Run the "Push an existing folder" commands.
+	```
+	cd example
+	```
+
+2. Log into GitLab and create a new repository.
+
+3. Run the "Push an existing folder" commands.
 
 ## Build and run the image
 
