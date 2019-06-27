@@ -1,6 +1,6 @@
 # About
 
-Creates an image containing Gitlab and a Gitlab runner. 
+Creates an image containing Gitlab, Gitlab runner and a Docker registry. 
 
 # Build
 
