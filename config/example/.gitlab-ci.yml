@@ -7,6 +7,17 @@ variables:
 services:
   - docker:dind
 
+stages:
+  - lint
+  - build
+
+
+lint:
+  stage: lint
+  script:
+    - 'docker run --rm -t -v $(pwd):/workdir giantswarm/yamllint -d "{extends: relaxed, rules:{line-length: {max: 150}}}" ./.gitlab-ci.yml'
+
+
 build:
   stage: build
   script:

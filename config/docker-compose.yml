@@ -8,7 +8,7 @@ services:
     restart: always
     environment:
       GITLAB_OMNIBUS_CONFIG: |
-        external_url 'http://<host_ip>'
+        external_url 'http://<private_ip>'
 #    volumes:
 #      - "/srv/gitlab/config:/etc/gitlab"
 #      - "/srv/gitlab/logs:/var/log/gitlab"
