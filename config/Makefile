@@ -58,4 +58,5 @@ register-gitlab-runner:
 	--docker-image "docker:stable" \
 	--docker-privileged \
 	--locked=false \
+	--docker-volumes /etc/docker/certs.d/:/etc/docker/certs.d/ \
 	> /dev/null;
