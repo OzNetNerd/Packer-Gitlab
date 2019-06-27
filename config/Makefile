@@ -51,7 +51,6 @@ register-gitlab-runner:
 	@echo Registering Gitlab runner...
 	@docker exec -it gitlab-runner \
 	gitlab-runner register -n \
-	--restart=always \
 	--url http://gitlab \
 	--registration-token ${REGISTRATION_TOKEN} \
 	--executor docker \
