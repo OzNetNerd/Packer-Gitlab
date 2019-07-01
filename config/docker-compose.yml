@@ -8,8 +8,12 @@ services:
     restart: always
     environment:
       GITLAB_OMNIBUS_CONFIG: |
-        external_url 'http://<private_ip>'
-#    volumes:
+        external_url 'http://${PUBLIC_HOSTNAME}'
+        # registry_external_url 'https://${PUBLIC_HOSTNAME}:5000'
+
+    volumes:
+      - "/home/ec2-user/certs/${PUBLIC_HOSTNAME}.crt:/etc/gitlab/ssl/${PUBLIC_HOSTNAME}.crt"
+      - "/home/ec2-user/certs/${PUBLIC_HOSTNAME}.key:/etc/gitlab/ssl/${PUBLIC_HOSTNAME}.key"
 #      - "/srv/gitlab/config:/etc/gitlab"
 #      - "/srv/gitlab/logs:/var/log/gitlab"
 #      - "/srv/gitlab/data:/var/opt/gitlab"
