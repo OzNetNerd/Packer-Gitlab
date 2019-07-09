@@ -1,4 +1,5 @@
 PUBLIC_HOSTNAME := $(shell curl http://169.254.169.254/latest/meta-data/public-hostname)
+PRIVATE_HOSTNAME := $(shell curl http://169.254.169.254/latest/meta-data/hostname)
 REGISTRY_USER?=testuser
 REGISTRY_PASSWORD?=testpassword
 REGISTRY_NAME?=registry
@@ -51,7 +52,7 @@ register-gitlab-runner:
 	@echo Registering Gitlab runner...
 	@docker exec -it gitlab-runner \
 	gitlab-runner register -n \
-	--url http://gitlab \
+	--url http://${PRIVATE_HOSTNAME} \
 	--registration-token ${REGISTRATION_TOKEN} \
 	--executor docker \
 	--description "Gitlab Runner" \
