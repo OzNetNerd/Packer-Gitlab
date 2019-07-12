@@ -30,7 +30,7 @@ Resources:
           yum update -y
           yum upgrade -y
           mkdir -p /home/ec2-user
-          wget https://raw.githubusercontent.com/OzNetNerd/Packer-Gitlab/master/config/gitlab-setup.sh
+          wget https://raw.githubusercontent.com/OzNetNerd/Packer-Gitlab/master/immutable/config/gitlab-setup.sh
           sed -e s/"sudo "//g -i gitlab-setup.sh
           chmod +x gitlab-setup.sh
           ./gitlab-setup.sh

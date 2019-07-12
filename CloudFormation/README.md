@@ -3,7 +3,7 @@
 1. Download the CloudFormation template:
 
 	```
-	wget https://
+	wget https://raw.githubusercontent.com/OzNetNerd/Packer-Gitlab/master/CloudFormation/cfn.yml
 	```
 
 2. Execute the CloudFormation template.
@@ -29,3 +29,7 @@
 	--query 'Stacks[0].Outputs[?OutputKey==`Ec2InstanceHostname`].OutputValue' \
 	--output text
 	```
+
+# Setting Up GitLab
+
+Follow the Setting Up Gitlab instructions on the [main page.](https://github.com/OzNetNerd/Packer-Gitlab)
