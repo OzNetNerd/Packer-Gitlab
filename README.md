@@ -32,3 +32,11 @@ Once you have you GitLab instance up and running, complete the following steps.
 	```
 
 6. Refresh the page to ensure your runner has successfully registered.
+
+# Recommended Repo Settings
+
+1. Create a repository
+
+2. Settings -> General -> Merge Requests - Enable `Pipelines must succeed`
+
+3. Settings -> CI/CD -> Variables - Add variables and secrets which are consumed by your pipeline

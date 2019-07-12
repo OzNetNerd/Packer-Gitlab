@@ -35,8 +35,8 @@ Resources:
           chmod +x gitlab-setup.sh
           ./gitlab-setup.sh
           rm gitlab-setup.sh
-          wget https://raw.githubusercontent.com/OzNetNerd/Packer-Gitlab/master/config/Makefile
-          wget https://raw.githubusercontent.com/OzNetNerd/Packer-Gitlab/master/config/docker-compose.yml
+          wget https://raw.githubusercontent.com/OzNetNerd/Packer-Gitlab/master/immutable/config/Makefile
+          wget https://raw.githubusercontent.com/OzNetNerd/Packer-Gitlab/master/immutable/config/docker-compose.yml
           chown ec2-user:ec2-user Makefile
           chown ec2-user:ec2-user docker-compose.yml
           mv ./Makefile /home/ec2-user
