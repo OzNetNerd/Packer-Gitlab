@@ -4,7 +4,7 @@ Spin up an EC2 instance containing Gitlab, Gitlab runner and a Docker registry.
 
 Note that there are two ways this can be done;
 
-1. Create a [Packer image](https://github.com/OzNetNerd/Packer-Gitlab/tree/master/immutable)
+1. Create a [Packer image](https://github.com/OzNetNerd/Packer-Gitlab/tree/master/Packer)
 2. Use an EC2 instance with a [`UserData` script](https://github.com/OzNetNerd/Packer-Gitlab/tree/master/CloudFormation)
 
 # Setting up Gitlab
