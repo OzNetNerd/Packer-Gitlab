@@ -31,6 +31,10 @@
     },
     {
       "type": "shell",
+      "script": "config/docker-setup.sh"
+    },
+    {
+      "type": "shell",
       "script": "config/gitlab-setup.sh"
     },
     {

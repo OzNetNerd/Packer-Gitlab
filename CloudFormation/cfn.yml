@@ -27,9 +27,12 @@ Resources:
       UserData:
         Fn::Base64: !Sub |
           #!/usr/bin/env bash
-          yum update -y
-          yum upgrade -y
           mkdir -p /home/ec2-user
+          wget https://raw.githubusercontent.com/OzNetNerd/Packer-Gitlab/master/Packer/config/docker-setup.sh
+          sed -e s/"sudo "//g -i docker-setup.sh
+          chmod +x docker-setup.sh
+          ./docker-setup.sh
+          rm docker-setup.sh
           wget https://raw.githubusercontent.com/OzNetNerd/Packer-Gitlab/master/Packer/config/gitlab-setup.sh
           sed -e s/"sudo "//g -i gitlab-setup.sh
           chmod +x gitlab-setup.sh
@@ -37,10 +40,9 @@ Resources:
           rm gitlab-setup.sh
           wget https://raw.githubusercontent.com/OzNetNerd/Packer-Gitlab/master/Packer/config/Makefile
           wget https://raw.githubusercontent.com/OzNetNerd/Packer-Gitlab/master/Packer/config/docker-compose.yml
-          chown ec2-user:ec2-user Makefile
-          chown ec2-user:ec2-user docker-compose.yml
           mv ./Makefile /home/ec2-user
           mv ./docker-compose.yml /home/ec2-user
+          chown -R ec2-user:ec2-user /home/ec2-user
       Tags:
         - Key: Name
           Value: GitLab
