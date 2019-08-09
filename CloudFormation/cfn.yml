@@ -27,7 +27,6 @@ Resources:
       UserData:
         Fn::Base64: !Sub |
           #!/usr/bin/env bash
-          mkdir -p /home/ec2-user
           wget https://raw.githubusercontent.com/OzNetNerd/Packer-Gitlab/master/Packer/config/docker-setup.sh
           sed -e s/"sudo "//g -i docker-setup.sh
           chmod +x docker-setup.sh
@@ -38,11 +37,6 @@ Resources:
           chmod +x gitlab-setup.sh
           ./gitlab-setup.sh
           rm gitlab-setup.sh
-          wget https://raw.githubusercontent.com/OzNetNerd/Packer-Gitlab/master/Packer/config/Makefile
-          wget https://raw.githubusercontent.com/OzNetNerd/Packer-Gitlab/master/Packer/config/docker-compose.yml
-          mv ./Makefile /home/ec2-user
-          mv ./docker-compose.yml /home/ec2-user
-          chown -R ec2-user:ec2-user /home/ec2-user
       Tags:
         - Key: Name
           Value: GitLab
@@ -66,4 +60,4 @@ Outputs:
   Ec2InstanceHostname:
     Value: !GetAtt Ec2Instance.PublicDnsName
     Export:
-      Name: !Sub "${AWS::StackName}-Ec2Instance"
+      Name: !Sub "${AWS::StackName}-smartcheck-jumphost"
