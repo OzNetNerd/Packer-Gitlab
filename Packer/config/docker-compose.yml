@@ -12,7 +12,7 @@ services:
         # registry_external_url 'https://${PUBLIC_HOSTNAME}:5000'
 
     volumes:
-      - "/home/ec2-user/certs/gitlab-config/${PUBLIC_HOSTNAME}.crt:/etc/gitlab/ssl/${PUBLIC_HOSTNAME}.crt"
+      - "/home/ec2-user/gitlab-config/certs/${PUBLIC_HOSTNAME}.crt:/etc/gitlab/ssl/${PUBLIC_HOSTNAME}.crt"
       - "/home/ec2-user/gitlab-config/certs/${PUBLIC_HOSTNAME}.key:/etc/gitlab/ssl/${PUBLIC_HOSTNAME}.key"
 #      - "/srv/gitlab/config:/etc/gitlab"
 #      - "/srv/gitlab/logs:/var/log/gitlab"
