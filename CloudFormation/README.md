@@ -30,13 +30,25 @@
 	--output text
 	```
 
-4. (Optional) Run the `docker ps` command. If you Receive the following error message:
+    Note: It takes approximately 5 minutes for the instance to be ready. If you'd like to keep an eye on its progress, SSH into it and issue the following command:
+    
+    ```
+    sudo tail -f /var/log/messages
+    ```
+
+4. Start the GitLab runner as per the instructions in the parent README.
+    ```
+
+
+## Troubleshooting
+
+Run the `docker ps` command. If you Receive the following error message:
 
 	```
 	Couldn't connect to Docker daemon at http+docker://localhost - is it running?
 	``` 
 	
-	Terminate the SSH session and reconnect.
+Terminate the SSH session and reconnect.
 
 # Setting Up GitLab
 
