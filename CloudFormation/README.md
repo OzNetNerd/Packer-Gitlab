@@ -36,17 +36,15 @@
     sudo tail -f /var/log/messages
     ```
 
-4. Start the GitLab runner as per the instructions in the parent README.
-    ```
-
+4. Start GitLab as per the instructions on the [main page.](https://github.com/OzNetNerd/Packer-Gitlab#setting-up-gitlab)
 
 ## Troubleshooting
 
 Run the `docker ps` command. If you Receive the following error message:
 
-	```
-	Couldn't connect to Docker daemon at http+docker://localhost - is it running?
-	``` 
+```
+Couldn't connect to Docker daemon at http+docker://localhost - is it running?
+```
 	
 Terminate the SSH session and reconnect.
 
