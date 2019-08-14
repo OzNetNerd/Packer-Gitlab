@@ -20,7 +20,7 @@
 	 --template-body file://cfn.yml
 	```
 
-3. Obtain the EC2 instance hostname:
+3. Obtain the EC2 instance hostname and SSH into it:
 
 	```
 	aws cloudformation \
@@ -29,12 +29,6 @@
 	--query 'Stacks[0].Outputs[?OutputKey==`Ec2InstanceHostname`].OutputValue' \
 	--output text
 	```
-
-    Note: It takes approximately 5 minutes for the instance to be ready. If you'd like to keep an eye on its progress, SSH into it and issue the following command:
-    
-    ```
-    sudo tail -f /var/log/messages
-    ```
 
 4. Start GitLab as per the instructions on the [main page.](https://github.com/OzNetNerd/Packer-Gitlab#setting-up-gitlab)
 

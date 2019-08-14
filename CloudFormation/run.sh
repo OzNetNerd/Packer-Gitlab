@@ -7,4 +7,6 @@ wget https://raw.githubusercontent.com/OzNetNerd/Packer-Gitlab/master/Packer/con
 chmod +x gitlab-setup.sh
 ./gitlab-setup.sh
 rm gitlab-setup.sh
-wget https://github.com/OzNetNerd/Packer-Gitlab/blob/master/Packer/config/Makefile
+wget https://raw.githubusercontent.com/OzNetNerd/Packer-Gitlab/master/Packer/config/Makefile
+chown -R ec2-user:ec2-user /home/ec2-user
+rm run.sh
