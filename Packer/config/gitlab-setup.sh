@@ -8,6 +8,7 @@ sudo docker pull docker:stable
 sudo docker pull registry:2
 mkdir -p /home/ec2-user/gitlab-config
 cd  /home/ec2-user/gitlab-config
+ssh-keygen -t rsa -N '' -f /home/ec2-user/.ssh/id_rsa
 wget https://raw.githubusercontent.com/OzNetNerd/Packer-Gitlab/master/Packer/config/Makefile
 wget https://raw.githubusercontent.com/OzNetNerd/Packer-Gitlab/master/Packer/config/docker-compose.yml
 sudo chown -R ec2-user:ec2-user /home/ec2-user
