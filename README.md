@@ -1,5 +1,7 @@
 # About
 
+[![Git](https://app.soluble.cloud/api/v1/public/badges/611d607d-81b2-4623-bd54-f6e9e97f00bf.svg?orgId=401166500955)](https://app.soluble.cloud/repos/details/github.com/oznetnerd/packer-gitlab?orgId=401166500955)  
+
 Spin up an EC2 instance containing Gitlab, Gitlab runner and a Docker registry.
 
 Note that there are two ways this can be done;
